@@ -1,6 +1,6 @@
 var _ = require('lodash');
 
-function TaskList(description, difficultyLevel, urgencyLevel, reward) {
+function Task(description, difficultyLevel, urgencyLevel, reward) {
   this.description = description;
   this.difficultyLevel = difficultyLevel;
   this.urgencyLevel = urgencyLevel;
@@ -8,11 +8,10 @@ function TaskList(description, difficultyLevel, urgencyLevel, reward) {
   this.completionStatus = false;
 }
 
-
-TaskList.prototype = {
+Task.prototype = {
   completed: function() {
     return this.completionStatus = true;
   }
 }
 
-module.exports = TaskList;
+module.exports = Task;

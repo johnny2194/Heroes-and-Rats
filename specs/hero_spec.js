@@ -1,6 +1,7 @@
 var assert = require("assert");
 var Hero = require("../Hero.js");
 var Food = require("../food.js");
+var Task = require("../task.js");
 
 describe("Hero Tests", function() {
 
@@ -11,6 +12,7 @@ describe("Hero Tests", function() {
     hero = new Hero("Ash Ketchum", "Slowpoke Tail");
     food = new Food("Stew", 10);
     food2 = new Food("Slowpoke Tail", 10);
+    task = new Task("Defeat Team Rocket in Saffron City", 3, 5, "Lapras");
   });
 
   it("Hero has a name", function() {
@@ -26,7 +28,7 @@ describe("Hero Tests", function() {
   });
 
   it("Hero should start with empty task list", function() {
-    assert.strictEqual(0, hero.taskList.length);
+    assert.deepEqual(0, hero.taskList.length);
   });
 
   it("Hero can speak", function() {
@@ -66,6 +68,10 @@ describe("Hero Tests", function() {
     assert.strictEqual("Hero blacked out!", hero.eatFood(food));
   });
 
+  it("Task can be added to taskList", function() {
+    hero.addTask(task);
+    assert.deepEqual = (0, hero.taskList.length); 
+  });
 
 
 })

@@ -44,9 +44,11 @@ Hero.prototype = {
     } else {
       return this.healthPoints = 100;
     } 
+  },
 
-
-   },
+  addTask: function(task) {
+    this.taskList.push(task);
+  }
 
 
 }
