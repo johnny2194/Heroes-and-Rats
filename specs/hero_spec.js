@@ -26,6 +26,10 @@ describe("Hero Tests", function() {
     assert.equal(0, hero.taskList.length);
   });
 
+  it("Hero can speak", function() {
+    assert.equal("My name is Ash Ketchum.", hero.speak());
+  });
+
 
 
 

@@ -10,7 +10,9 @@ function Hero(name, favouriteFood) {
 
 Hero.prototype = {
   
+  speak: function(){
+    return "My name is " + this.name + ".";
+  }
 }
-
 
 module.exports = Hero ;
