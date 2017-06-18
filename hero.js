@@ -23,11 +23,33 @@ Hero.prototype = {
   },
 
   eatFood: function(food) {
-    if (this.healthPoints + food.hpBoostValue > 100) { 
+  
+     if (this.healthPoints + food.hpBoostValue > 100) { 
       return this.healthPoints = 100;
     } 
     return this.healthPoints += food.hpBoostValue;
   }
+
+  // eatFood: function(food) {
+  //    var currentHealth = this.healthPoints;
+  //    var foodGain = food.hpBoostValue;
+
+  //    if(food.name === this.favouriteFood) {
+  //      foodGain = (foodGain * 1.5);
+  //    }
+
+  //    if(food.poison === true) {
+  //      foodGain = -20
+  //    }
+
+  //    var potentialHealth = currentHealth += foodGain;
+
+  //    if(potentialHealth <= 100) {
+  //      this.health += foodGain;
+  //    } else {
+  //      this.health = 100;
+  //    }
+  //  },
 
 
 }

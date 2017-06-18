@@ -45,6 +45,10 @@ describe("Hero Tests", function() {
     assert.equal(90, hero.eatFood(food));
   })
 
+  it("Hero can only have max 100 HP", function() {
+    assert.equal(100, hero.eatFood(food));
+  })
+
 
 
 

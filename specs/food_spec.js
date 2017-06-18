@@ -18,4 +18,8 @@ describe("Food Tests", function() {
     assert.equal(10, food.hpBoostValue);
   });
 
+  it("Has status of poison", function() {
+    assert.equal(false, food.poisonStatus);
+  });
+
 })
