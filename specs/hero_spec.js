@@ -2,6 +2,7 @@ var assert = require("assert");
 var Hero = require("../Hero.js");
 var Food = require("../food.js");
 var Task = require("../task.js");
+var Rat = require("../rat.js");
 
 describe("Hero Tests", function() {
 
@@ -14,6 +15,7 @@ describe("Hero Tests", function() {
     food2 = new Food("Slowpoke Tail", 10);
     task = new Task("Defeat Team Rocket in Saffron City", 3, 5, "Lapras");
     task2 = new Task("Take a picture of a Charizard in a volcano", 5, 1, "Street Cred");
+    rat = new Rat();
   });
 
   it("Hero has a name", function() {
@@ -59,7 +61,7 @@ describe("Hero Tests", function() {
   });
 
   it("Hero can lose 20 HP if eats poisoned food", function() {
-    food.poisonStatus = true;
+    rat.touchFood(food)
     assert.strictEqual(80, hero.eatFood(food));
   });
 
