@@ -1,5 +1,6 @@
 var _ = require('lodash');
 
+
 function Hero(name, favouriteFood) {
   this.name = name;
   this.favouriteFood = favouriteFood;
@@ -19,6 +20,13 @@ Hero.prototype = {
       return this.healthPoints -= damage;
     }
     return "Hero blacked out!";
+  },
+
+  eatFood: function(food) {
+    if (this.healthPoints + food.hpBoostValue > 100) { 
+      return this.healthPoints = 100;
+    } 
+    return this.healthPoints += food.hpBoostValue;
   }
 
 

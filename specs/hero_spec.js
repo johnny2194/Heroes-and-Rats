@@ -1,5 +1,6 @@
 var assert = require("assert");
 var Hero = require("../Hero.js");
+var Food = require("../food.js");
 
 describe("Hero Tests", function() {
 
@@ -8,6 +9,7 @@ describe("Hero Tests", function() {
 
   beforeEach("Setup", function() {
     hero = new Hero("Ash Ketchum", "Slowpoke Tail");
+    food = new Food("Stew", 10);
   });
 
   it("Hero has a name", function() {
@@ -37,6 +39,11 @@ describe("Hero Tests", function() {
   it("Hero blacks out when HP is zero", function() {
     assert.equal("Hero blacked out!", hero.hurt(100));
   });
+
+  it("Hero can eat food and recieve HP boost", function() {
+    hero.hurt(20);
+    assert.equal(90, hero.eatFood(food));
+  })
 
 
 
