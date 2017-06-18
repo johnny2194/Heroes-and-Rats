@@ -14,4 +14,8 @@ describe("Food Tests", function() {
     assert.equal("Stew", food.name);
   });
 
+  it("Food has hpBoostValue", function() {
+    assert.equal(10, food.hpBoostValue);
+  });
+
 })
