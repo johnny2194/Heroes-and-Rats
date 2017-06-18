@@ -11,15 +11,15 @@ describe("Food Tests", function() {
   });
 
   it("Food has name", function() {
-    assert.equal("Stew", food.name);
+    assert.strictEqual("Stew", food.name);
   });
 
   it("Food has hpBoostValue", function() {
-    assert.equal(10, food.hpBoostValue);
+    assert.strictEqual(10, food.hpBoostValue);
   });
 
   it("Has status of poison", function() {
-    assert.equal(false, food.poisonStatus);
+    assert.strictEqual(false, food.poisonStatus);
   });
 
 })

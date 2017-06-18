@@ -10,7 +10,9 @@ function TaskList(description, difficultyLevel, urgencyLevel, reward) {
 
 
 TaskList.prototype = {
-  
+  completed: function() {
+    return this.completionStatus = true;
+  }
 }
 
 module.exports = TaskList;
