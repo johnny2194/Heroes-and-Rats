@@ -54,7 +54,13 @@ Hero.prototype = {
     this.taskList.sort(function(a, b) {
       return a.difficultyLevel - b.difficultyLevel
     })
-  }
+  },
+
+  sortByUrgency: function () {
+    this.taskList.sort(function(a, b) {
+      return b.urgencyLevel - a.urgencyLevel
+    })
+  },
 }
 
 module.exports = Hero ;

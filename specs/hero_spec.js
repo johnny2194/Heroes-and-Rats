@@ -74,12 +74,18 @@ describe("Hero Tests", function() {
     assert.deepEqual(1, hero.taskList.length); 
   });
 
-  it("Tasks can be sorted in order of difficulty", function() {
-    hero.addTask(task);
+  it("Tasks can be sorted in order of difficulty low to high", function() {
     hero.addTask(task2);
+    hero.addTask(task);
     hero.sortByDifficulty();
-    assert.deepEqual([task, task2], hero.taskList);
+    assert.deepEqual([task, task2], hero.taskList)
+  });
 
+  it("Tasks can be sorted in order of urgency high to low", function() {
+    hero.addTask(task2);
+    hero.addTask(task);
+    hero.sortByUrgency();
+    assert.deepEqual([task, task2], hero.taskList)
   });
 
 
