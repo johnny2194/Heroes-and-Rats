@@ -13,6 +13,7 @@ describe("Hero Tests", function() {
     food = new Food("Stew", 10);
     food2 = new Food("Slowpoke Tail", 10);
     task = new Task("Defeat Team Rocket in Saffron City", 3, 5, "Lapras");
+    task2 = new Task("Take a picture of a Charizard in a volcano", 5, 1, "Street Cred");
   });
 
   it("Hero has a name", function() {
@@ -70,7 +71,15 @@ describe("Hero Tests", function() {
 
   it("Task can be added to taskList", function() {
     hero.addTask(task);
-    assert.deepEqual = (0, hero.taskList.length); 
+    assert.deepEqual(1, hero.taskList.length); 
+  });
+
+  it("Tasks can be sorted in order of difficulty", function() {
+    hero.addTask(task);
+    hero.addTask(task2);
+    hero.sortByDifficulty();
+    assert.deepEqual([task, task2], hero.taskList);
+
   });
 
 
