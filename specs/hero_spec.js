@@ -30,6 +30,14 @@ describe("Hero Tests", function() {
     assert.equal("My name is Ash Ketchum.", hero.speak());
   });
 
+  it("Hero can lose HP when health is greater than zero", function() {
+    assert.equal(80, hero.hurt(20));
+  });
+
+  it("Hero blacks out when HP is zero", function() {
+    assert.equal("Hero blacked out!", hero.hurt(100));
+  });
+
 
 
 

@@ -12,7 +12,16 @@ Hero.prototype = {
   
   speak: function(){
     return "My name is " + this.name + ".";
+  },
+
+  hurt: function(damage) {
+    if (this.healthPoints - damage > 0) {  
+      return this.healthPoints -= damage;
+    }
+    return "Hero blacked out!";
   }
+
+
 }
 
 module.exports = Hero ;
