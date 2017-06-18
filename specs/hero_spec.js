@@ -10,6 +10,7 @@ describe("Hero Tests", function() {
   beforeEach("Setup", function() {
     hero = new Hero("Ash Ketchum", "Slowpoke Tail");
     food = new Food("Stew", 10);
+    food2 = new Food("Slowpoke Tail", 10);
   });
 
   it("Hero has a name", function() {
@@ -43,12 +44,27 @@ describe("Hero Tests", function() {
   it("Hero can eat food and recieve HP boost", function() {
     hero.hurt(20);
     assert.equal(90, hero.eatFood(food));
-  })
+  });
 
   it("Hero can only have max 100 HP", function() {
     assert.equal(100, hero.eatFood(food));
-  })
+  });
 
+  it("Hero can get 1.5x HP if favourite food", function() {
+    hero.hurt(20);
+    assert.equal(95, hero.eatFood(food2));
+  });
+
+  it("Hero can lose 20 HP if eats poisoned food", function() {
+    food.poisonStatus = true;
+    assert.equal(80, hero.eatFood(food));
+  });
+
+  it("Hero blacks out after eating poisoned food at 20 HP or less", function() {
+    food.poisonStatus = true;
+    hero.hurt(90);
+    assert.equal("Hero blacked out!", hero.eatFood(food));
+  });
 
 
 
