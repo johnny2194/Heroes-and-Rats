@@ -3,7 +3,7 @@ var _ = require('lodash');
 function Hero(name, favouriteFood) {
   this.name = name;
   this.favouriteFood = favouriteFood;
-  this.health = 100;
+  this.healthPoints = 100;
   this.taskList = [];
 }
 
@@ -13,4 +13,4 @@ Hero.prototype = {
 }
 
 
-module.exports = Hero;
+module.exports = Hero ;
